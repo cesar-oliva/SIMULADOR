@@ -1,0 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Modelo;
+
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Juampy
+ */
+public class DataBase {
+    public static ArrayList<Proceso> listado = new ArrayList<Proceso>();
+    
+    public static void agregarProceso(Proceso p)
+    {
+        listado.add(p);
+    }
+    public static ArrayList<Proceso> getProceso()
+    {
+        return listado;
+    }
+            
+}
