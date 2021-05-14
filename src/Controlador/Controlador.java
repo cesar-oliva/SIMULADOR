@@ -13,13 +13,10 @@ import Modelo.Proceso;
 import Vista.VentanaProceso;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Calendar;
-import static java.util.Calendar.HOUR_OF_DAY;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
-import javax.swing.table.DefaultTableCellRenderer;
 /**
  *
  * @author Juampy
@@ -74,7 +71,7 @@ public class Controlador {
             v.getBotonSimular().setEnabled(true);
             int lote = Integer.parseInt(v.getTextLotes().getText());
             int peso = Integer.parseInt(v.getTextToneladas().getText());
-            int humedad = Integer.parseInt(v.getTextHumedad().getText());
+            double humedad = Double.parseDouble(v.getTextHumedad().getText());
             String tipo = v.getCombo1().getSelectedItem().toString();
             Proceso pro = new Proceso(tipo,lote,peso,humedad);
             DataBase.agregarProceso(pro);

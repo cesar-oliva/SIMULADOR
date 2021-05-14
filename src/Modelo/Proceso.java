@@ -13,11 +13,11 @@ public class Proceso {
     private String tipoProceso;
     private int nroLotes;
     private int peso;
-    private int humedad;
+    private double humedad;
     private String estado;
     private int Exposicion;
 
-    public Proceso(String tipoProceso, int nroLotes, int peso, int humedad) {
+    public Proceso(String tipoProceso, int nroLotes, int peso, double humedad) {
         this.tipoProceso = tipoProceso;
         this.nroLotes = nroLotes;
         this.peso = peso;
@@ -30,7 +30,7 @@ public class Proceso {
         this.peso = peso;
     }
 
-    public Proceso(String tipoProceso, int nroLotes, int humedad, String estado, int Exposicion) {
+    public Proceso(String tipoProceso, int nroLotes, double humedad, String estado, int Exposicion) {
         this.tipoProceso = tipoProceso;
         this.nroLotes = nroLotes;
         this.humedad = humedad;
@@ -64,7 +64,7 @@ public class Proceso {
         this.peso = peso;
     }
 
-    public int getHumedad() {
+    public double getHumedad() {
         return humedad;
     }
 

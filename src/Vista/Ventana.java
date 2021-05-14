@@ -94,7 +94,7 @@ int x,y;
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)
+            .addComponent(botonCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -118,6 +118,26 @@ int x,y;
         jLabel5.setText("Humedad %:");
 
         jCheckBox1.setText("Aleatorio");
+        jCheckBox1.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jCheckBox1ComponentAdded(evt);
+            }
+        });
+        jCheckBox1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jCheckBox1StateChanged(evt);
+            }
+        });
+        jCheckBox1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jCheckBox1FocusGained(evt);
+            }
+        });
+        jCheckBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jCheckBox1KeyPressed(evt);
+            }
+        });
 
         tablaProceso.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -288,6 +308,26 @@ int x,y;
         Point point = MouseInfo.getPointerInfo().getLocation();
                 setLocation(point.x - x, point.y - y);
     }//GEN-LAST:event_jLabel1MouseDragged
+
+    private void jCheckBox1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jCheckBox1StateChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jCheckBox1StateChanged
+
+    private void jCheckBox1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jCheckBox1ComponentAdded
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jCheckBox1ComponentAdded
+
+    private void jCheckBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox1KeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jCheckBox1KeyPressed
+
+    private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
+        // TODO add your handling code here:
+      TextHumedad.setText(String.valueOf(Controlador.ControladorProbabilidad.distribucionContinua(60, 99)));
+    }//GEN-LAST:event_jCheckBox1FocusGained
 
     /**
      * @param args the command line arguments
