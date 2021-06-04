@@ -36,10 +36,11 @@ public class Controlador {
         setTablas();
         
         ///PROBANDO FUNCIONES NUEVAS
-        System.out.println(Controladores.ControladorHumedad.humedadHoja(Controladores.ControladorSemilla.metodoCuadrado(2), 3500.0D));
-        
-        
-        
+        System.out.println(Controladores.ControladorHumedad.humedadHoja(3500.0D));
+        System.out.println(Controladores.ControladorCalor.calcularCalorRequerido(30, 4, 7, 90, 0));
+        System.out.println(Controladores.ControladorCalor.calcularCalorLeña());
+        System.out.println(Controladores.ControladorCalor.perdidaTemperatura());
+        System.out.println(Controladores.ControladorHumedad.estandarHoja());
         
         
     }
