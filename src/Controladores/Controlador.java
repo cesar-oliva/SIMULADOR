@@ -28,6 +28,7 @@ public class Controlador {
     static Timer t; 
     static int valor;
     static int i;
+    public static boolean proceso=false;
     
     public static void iniciar()
     {
@@ -41,6 +42,8 @@ public class Controlador {
         System.out.println(Controladores.ControladorCalor.calcularCalorLeña());
         System.out.println(Controladores.ControladorCalor.perdidaTemperatura());
         System.out.println(Controladores.ControladorHumedad.estandarHoja());
+        System.out.println(Controladores.ControladorProceso.establecerCarga(750000));
+        System.out.println(Controladores.ControladorProceso.tiempoProceso());
         
         
     }
