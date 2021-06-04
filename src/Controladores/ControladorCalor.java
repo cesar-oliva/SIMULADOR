@@ -35,17 +35,8 @@ public class ControladorCalor {
         //METODO PARA CALCULAR LOS PARAMETROS DE TEMPERATURA INICIALES DE LA MAQUINA DE SECADO (90-120)
     public static double tiempoProceso(){
         float semilla = (float)Controladores.ControladorSemilla.metodoCuadrado(2);
-        System.out.println(semilla);
-        int tiempo =0;
-        if(semilla<=0.50f){
-            tiempo=8;
-        }else{
-            if(semilla<=0.90f){
-            tiempo=12;
-            }else{
-               tiempo=16;   
-            }   
-        }
-        return tiempo;
+        double temp_Secado=90+(30*semilla);     
+        return temp_Secado;
     }
+
 }

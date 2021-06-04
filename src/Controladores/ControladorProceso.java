@@ -27,7 +27,6 @@ public class ControladorProceso {
     //METODO PARA EL TIEMPO DE TRABAJO DE LA MAQUINA DE SECADO (8,12,16)
     public static double tiempoProceso(){
         float semilla = (float)Controladores.ControladorSemilla.metodoCuadrado(2);
-        System.out.println(semilla);
         int tiempo =0;
         if(semilla<=0.50f){
             tiempo=8;
