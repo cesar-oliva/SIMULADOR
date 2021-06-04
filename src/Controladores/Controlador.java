@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controlador;
+package Controladores;
 
 
 import Modelo.DataBase;
@@ -34,6 +34,14 @@ public class Controlador {
         v.setLocationRelativeTo(null);
         v.setVisible(true);
         setTablas();
+        
+        ///PROBANDO FUNCIONES NUEVAS
+        System.out.println(Controladores.ControladorHumedad.humedadHoja(Controladores.ControladorSemilla.metodoCuadrado(2), 3500.0D));
+        
+        
+        
+        
+        
     }
     public static void setTablas()
     {
@@ -57,31 +65,31 @@ public class Controlador {
         vp.getTablaProceso2().setModel(modelo2);
     }
     
-    public static void cargarProceso()
-    {
-        DefaultTableModel modelo = (DefaultTableModel) v.getTablaProceso().getModel();
-        if(v.getTextLotes().getText().isEmpty() || v.getTextHumedad().getText().isEmpty() ||
-                v.getTextToneladas().getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(null,"Los campos no pueden estar vacios","ATENCION",JOptionPane.WARNING_MESSAGE);
-        }
-        else
-            
-        {
-            v.getBotonSimular().setEnabled(true);
-            int lote = Integer.parseInt(v.getTextLotes().getText());
-            int peso = Integer.parseInt(v.getTextToneladas().getText());
-            double humedad = Double.parseDouble(v.getTextHumedad().getText());
-            String tipo = v.getCombo1().getSelectedItem().toString();
-            Proceso pro = new Proceso(tipo,lote,peso,humedad);
-            DataBase.agregarProceso(pro);
-            modelo.addRow(new Object[]{pro.getNroLotes(),pro.getPeso(),
-                                       pro.getHumedad(),pro.getTipoProceso()});
-            v.getTextHumedad().setText("");
-            v.getTextLotes().setText("");
-            v.getTextToneladas().setText("");
-        }
-    }
+//    public static void cargarProceso()
+//    {
+//        DefaultTableModel modelo = (DefaultTableModel) v.getTablaProceso().getModel();
+//        if(v.getTextLotes().getText().isEmpty() || v.getTextHumedad().getText().isEmpty() ||
+//                v.getTextToneladas().getText().isEmpty())
+//        {
+//            JOptionPane.showMessageDialog(null,"Los campos no pueden estar vacios","ATENCION",JOptionPane.WARNING_MESSAGE);
+//        }
+//        else
+//            
+//        {
+//            v.getBotonSimular().setEnabled(true);
+//            int lote = Integer.parseInt(v.getTextLotes().getText());
+//            int peso = Integer.parseInt(v.getTextToneladas().getText());
+//            double humedad = Double.parseDouble(v.getTextHumedad().getText());
+//            String tipo = v.getCombo1().getSelectedItem().toString();
+//            Proceso pro = new Proceso(tipo,lote,peso,humedad);
+//            DataBase.agregarProceso(pro);
+//            modelo.addRow(new Object[]{pro.getNroLotes(),pro.getPeso(),
+//                                       pro.getHumedad(),pro.getTipoProceso()});
+//            v.getTextHumedad().setText("");
+//            v.getTextLotes().setText("");
+//            v.getTextToneladas().setText("");
+//        }
+//    }
     
     public static void iniciarProceso()
     {

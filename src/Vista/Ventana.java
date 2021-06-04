@@ -503,11 +503,11 @@ int x,y;
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
-        Controlador.Controlador.cargarProceso();
+        //Controladores.Controlador.cargarProceso();
     }//GEN-LAST:event_botonAgregarActionPerformed
 
     private void botonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSimularActionPerformed
-        Controlador.Controlador.iniciarProceso();
+        Controladores.Controlador.iniciarProceso();
     }//GEN-LAST:event_botonSimularActionPerformed
 
     private void Combo1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Combo1ItemStateChanged
@@ -535,7 +535,7 @@ int x,y;
 
     private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
         // TODO add your handling code here:
-      TextHumedad.setText(String.valueOf(Controlador.ControladorProbabilidad.distribucionContinua(60, 99)));
+      TextHumedad.setText(String.valueOf(Controladores.ControladorProbabilidad.distribucionContinua(60, 99)));
     }//GEN-LAST:event_jCheckBox1FocusGained
 
     private void Combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Combo1ActionPerformed
@@ -712,14 +712,6 @@ int x,y;
         this.TextHumedad = TextHumedad;
     }
 
-    public javax.swing.JTextField getTextLotes() {
-        return TextLotes;
-    }
-
-    public void setTextLotes(javax.swing.JTextField TextLotes) {
-        this.TextLotes = TextLotes;
-    }
-
     public javax.swing.JTextField getTextToneladas() {
         return TextToneladas;
     }
@@ -744,13 +736,7 @@ int x,y;
         this.botonCancelar = botonCancelar;
     }
 
-    public javax.swing.JButton getBotonCerrar() {
-        return botonCerrar;
-    }
 
-    public void setBotonCerrar(javax.swing.JButton botonCerrar) {
-        this.botonCerrar = botonCerrar;
-    }
 
     public javax.swing.JButton getBotonEliminar() {
         return botonEliminar;
@@ -832,13 +818,6 @@ int x,y;
         this.jLabel6 = jLabel6;
     }
 
-    public javax.swing.JPanel getjPanel1() {
-        return jPanel1;
-    }
-
-    public void setjPanel1(javax.swing.JPanel jPanel1) {
-        this.jPanel1 = jPanel1;
-    }
 
     public javax.swing.JPanel getjPanel2() {
         return jPanel2;
