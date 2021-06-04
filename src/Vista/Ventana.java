@@ -535,7 +535,7 @@ int x,y;
 
     private void jCheckBox1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jCheckBox1FocusGained
         // TODO add your handling code here:
-      TextHumedad.setText(String.valueOf(Controladores.ControladorProbabilidad.distribucionContinua(60, 99)));
+      TextHumedad.setText(String.valueOf(Controladores.ControladorProbabilidad.distribucionContinua(60, 70)));
     }//GEN-LAST:event_jCheckBox1FocusGained
 
     private void Combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Combo1ActionPerformed

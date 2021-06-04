@@ -13,4 +13,9 @@ public class ControladorProbabilidad {
         double aleatorio = ControladorSemilla.metodoCuadrado(2);
         return valor_1+((valor_2-valor_1)*aleatorio);
     }
+     public static double distribucionExponencial(float valor_medio,float horas){
+        double aleatorio = ControladorSemilla.metodoCuadrado(2);
+        double valor_result=(valor_medio/horas);
+        return (-valor_result*Math.log10(aleatorio));
+    }
 }

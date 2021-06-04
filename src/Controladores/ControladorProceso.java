@@ -16,8 +16,7 @@ public class ControladorProceso {
         
     //METODO PARA ESTABLECER LA CARGA DE HOJAS AL SECADOR (3000 A 3500)
     public static double establecerCarga(double cant_Hoja){
-        double semilla = Controladores.ControladorSemilla.metodoCuadrado(2);
-        double carga_Hoja = 3000+(500*semilla);
+        double carga_Hoja = Controladores.ControladorProbabilidad.distribucionContinua(3000, 3500);
         if(cant_Hoja<=carga_Hoja){
             carga_Hoja=cant_Hoja;
         }

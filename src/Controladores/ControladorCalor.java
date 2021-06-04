@@ -22,20 +22,18 @@ public class ControladorCalor {
     }
     //METODO PARA CALCULAR LAS KILOCALORIAS QUE APORTA LA LEÑA
     public static double calcularCalorLeña(){
-       double semilla = Controladores.ControladorSemilla.metodoCuadrado(2);
-       double kcal_Leña = 4548+(130*semilla);
+       double kcal_Leña = Controladores.ControladorProbabilidad.distribucionContinua(4548, 4678);
        return kcal_Leña;
     }
     //METODO PARA CALCULAR LA PERDIDA DE TEMPERATURA DEL SECADOR
     public static double perdidaTemperatura(){
        double semilla = Controladores.ControladorSemilla.metodoCuadrado(2);
-       double perdida_Temp = -20*Math.log10(semilla);
+       double perdida_Temp = Controladores.ControladorProbabilidad.distribucionExponencial(10,0.5f);
        return perdida_Temp;
     }
         //METODO PARA CALCULAR LOS PARAMETROS DE TEMPERATURA INICIALES DE LA MAQUINA DE SECADO (90-120)
     public static double tiempoProceso(){
-        float semilla = (float)Controladores.ControladorSemilla.metodoCuadrado(2);
-        double temp_Secado=90+(30*semilla);     
+        double temp_Secado=Controladores.ControladorProbabilidad.distribucionContinua(90, 120);    
         return temp_Secado;
     }
 
