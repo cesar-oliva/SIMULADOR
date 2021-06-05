@@ -12,7 +12,7 @@ package Controladores;
  */
 public class ControladorCalor {
        //METODO PARA CALCULAR EL CALOR REQUERIDO PARA CALENTAR EL ESTABLECIMIENTO DE SECADO
-    public static double calcularCalorRequerido(float largo_Secador, float ancho_Secador, float alto_Secador,float temp_Secado, float temp_Actual){
+    public static double calcularCalorRequerido(float largo_Secador, float ancho_Secador, float alto_Secador,double temp_Secado, double temp_Actual){
         final int densidad_Aire = 1118;
         final int calor_Aire = 240;
         float volumen_Secador = ancho_Secador*alto_Secador*largo_Secador;   
@@ -32,7 +32,7 @@ public class ControladorCalor {
        return perdida_Temp;
     }
         //METODO PARA CALCULAR LOS PARAMETROS DE TEMPERATURA INICIALES DE LA MAQUINA DE SECADO (90-120)
-    public static double tiempoProceso(){
+    public static double calcualarParametros(){
         double temp_Secado=Controladores.ControladorProbabilidad.distribucionContinua(90, 120);    
         return temp_Secado;
     }

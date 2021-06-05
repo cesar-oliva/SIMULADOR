@@ -29,6 +29,7 @@ public class Controlador {
     static int valor;
     static int i;
     public static boolean proceso=false;
+
     
     public static void iniciar()
     {
@@ -44,7 +45,7 @@ public class Controlador {
         System.out.println(Controladores.ControladorHumedad.estandarHoja());
         System.out.println(Controladores.ControladorProceso.establecerCarga(750000));
         System.out.println(Controladores.ControladorProceso.tiempoProceso());
-        
+        System.out.println(Controladores.ControladorProbabilidad.distribucionNormal(850, 150));
         
     }
     public static void setTablas()
