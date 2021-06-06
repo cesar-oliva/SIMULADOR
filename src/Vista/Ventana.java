@@ -503,11 +503,11 @@ int x,y;
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
-        //Controladores.Controlador.cargarProceso();
+        //Controladores.ControladorEjecucion.cargarProceso();
     }//GEN-LAST:event_botonAgregarActionPerformed
 
     private void botonSimularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSimularActionPerformed
-        Controladores.Controlador.iniciarProceso();
+        Controladores.ControladorEjecucion.iniciarSimulacion();
     }//GEN-LAST:event_botonSimularActionPerformed
 
     private void Combo1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Combo1ItemStateChanged

@@ -25,9 +25,7 @@ public class ControladorProbabilidad {
         float suma = 0;
         for(int i =0; i<12;i++){
             double aleatorio = ControladorSemilla.metodoCuadrado(2);
-            System.out.println("semilla: "+aleatorio);
             suma+=aleatorio;
-            System.out.println("suma"+suma);
         }
         return (valor_desviacion*(suma-6)+valor_medio);
     }

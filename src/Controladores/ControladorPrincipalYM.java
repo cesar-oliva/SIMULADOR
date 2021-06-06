@@ -15,7 +15,7 @@ public class ControladorPrincipalYM {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Controlador.iniciar();
+        ControladorEjecucion.iniciar();
     }
     
 }
