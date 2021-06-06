@@ -45,7 +45,8 @@ public class ControladorCostos {
                 break; 
                 default : 
                    // Declaraciones
-            }      
+            }
+        tipo_Comb++;
        }      
     }
     

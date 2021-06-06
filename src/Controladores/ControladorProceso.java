@@ -16,6 +16,7 @@ public class ControladorProceso {
     private static double hoja_Seca=0;
     private static double estandar_Hoja=0;
     private static double aux_Secado=0;
+    private static double aux_Proceso=0;
     
     public static double getCarga_Hoja() {
         return carga_Hoja;
@@ -25,14 +26,31 @@ public class ControladorProceso {
         ControladorProceso.carga_Hoja = carga_Hoja;
     }
 
+    public static double getHoja_Seca() {
+        return hoja_Seca;
+    }
+
+    public static double getEstandar_Hoja() {
+        return estandar_Hoja;
+    }
+    
     public static int getTiempo() {
         return tiempo;
+    }
+
+    public static double getAux_Secado() {
+        return aux_Secado;
+    }
+
+    public static double getAux_Proceso() {
+        return aux_Proceso;
     }
             
     //METODO PARA ESTABLECER LA CARGA DE HOJAS AL SECADOR (3000 A 3500)
     public static void establecerCarga(){
         carga_Hoja = 0;
         carga_Hoja=Controladores.ControladorProbabilidad.distribucionContinua(3000, 3500); 
+        aux_Proceso +=carga_Hoja; 
         if(Controladores.ControladorEjecucion.getCant_carga()<=carga_Hoja){
             carga_Hoja=Controladores.ControladorEjecucion.getCant_carga();
             Controladores.ControladorEjecucion.setP(Controladores.ControladorEjecucion.proceso.DESACTIVADO);
@@ -55,13 +73,13 @@ public class ControladorProceso {
     //INICIAR PROCESO DE SECADO A LA HOJA
      public static void procesarHoja(){
         int tipo_Comb=1; 
-        carga_Hoja=Controladores.ControladorHumedad.iniciarSapecado(carga_Hoja);
+        aux_Secado=carga_Hoja;
+        aux_Secado=Controladores.ControladorHumedad.iniciarSapecado(aux_Secado);
         Controladores.ControladorEnergetico.calcularParametros();
-        carga_Hoja=Controladores.ControladorHumedad.humedadHoja(carga_Hoja);
-        Controladores.ControladorEjecucion.setCant_carga(Controladores.ControladorEjecucion.getCant_carga()-carga_Hoja);
-        aux_Secado+=carga_Hoja;
+        aux_Secado=Controladores.ControladorHumedad.humedadHoja(aux_Secado);
+        Controladores.ControladorEjecucion.setCant_carga(Controladores.ControladorEjecucion.getCant_carga()-aux_Secado);
         estandar_Hoja = Controladores.ControladorHumedad.estandarHoja();
-        hoja_Seca+=(carga_Hoja*(1+(estandar_Hoja/100)));
+        hoja_Seca+=(aux_Secado*(1+(estandar_Hoja/100)));
         Controladores.ControladorEnergetico.perdidaTemperatura();
         Controladores.ControladorEnergetico.setupSecador(30, 7, 4);
     }

@@ -67,16 +67,46 @@ public class ControladorEjecucion {
     int mes = 1;
     int dia = 1;
     int jornada = 1;
+    int tipo_Comb=1;
     while(mes<=12){
         ControladorEjecucion.setCant_carga(0);
         ControladorEjecucion.setCant_carga(Controladores.ControladorProbabilidad.distribucionNormal(750000, 40000));
         while(dia<=30&&p.equals(p.ACTIVADO)){
+            tipo_Comb=1;
             Controladores.ControladorProceso.tiempoProceso();
             while(jornada<=Controladores.ControladorProceso.getTiempo()&&p.equals(p.ACTIVADO)){
                 Controladores.ControladorProceso.establecerCarga();
-                Controladores.ControladorProceso.procesarHoja();
+                Controladores.ControladorProceso.procesarHoja();  
                 jornada++;
-            }   
+            }
+        while(tipo_Comb<=4){
+            switch(tipo_Comb){
+                case 1 : 
+                    System.out.println("Tipo Combustible: Chip");
+                    System.out.printf("Cantidad de Recurso: %.3f [kg]\n",Controladores.ControladorEnergetico.getCant_Chip());
+                    break; 
+                case 2 :
+                    System.out.println("Tipo Combustible: Pellet");
+                    System.out.printf("Cantidad de Recurso: %.3f [kg]\n",Controladores.ControladorEnergetico.getCant_Pellet());
+                    break; 
+                case 3 :
+                    System.out.println("Tipo Combustible: Briqueta");
+                    System.out.printf("Cantidad de Recurso:%.3f [kg]\n",Controladores.ControladorEnergetico.getCant_Briqueta());
+                    break; 
+                case 4 :
+                    System.out.println("Tipo Combustible: Leña");
+                    System.out.printf("Cantidad de Recurso:%.3f [kg]\n",Controladores.ControladorEnergetico.getCant_Leña());
+                    break; 
+                default : 
+                   // Declaraciones
+            }
+        tipo_Comb++;
+        }
+        System.out.printf("Cantidad de Hojas verdes Procesadas: %.3f [kg]\n",Controladores.ControladorProceso.getAux_Proceso());
+        System.out.printf("Cantidad de Hojas Secas obtenidas: %.3f [kg]\n",Controladores.ControladorProceso.getHoja_Seca());
+        System.out.printf("Porcentaje de Humedad de Hojas Procesadas: %.3f\n",Controladores.ControladorProceso.getEstandar_Hoja());
+        //System.out.printf("Cantidad de Hojas Secas obtenidas: %.3f [kg]\n",Controladores.ControladorProceso.getAux_Secado());
+        Controladores.ControladorEjecucion.setP(proceso.DESACTIVADO);     
         dia++;
         }
     mes++;    

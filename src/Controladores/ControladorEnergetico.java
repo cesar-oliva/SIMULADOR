@@ -80,7 +80,8 @@ public class ControladorEnergetico {
                 break; 
                 default : 
                    // Declaraciones
-            }      
+            }
+        tipo_Comb++;
        }
         temp_Actual = temp_Secado;
     }
