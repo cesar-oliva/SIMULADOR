@@ -80,7 +80,6 @@ public class ControladorProceso {
         Controladores.ControladorEjecucion.setCant_carga(Controladores.ControladorEjecucion.getCant_carga()-aux_Secado);
         estandar_Hoja = Controladores.ControladorHumedad.estandarHoja();
         hoja_Seca+=(aux_Secado*(1+(estandar_Hoja/100)));
-        Controladores.ControladorEnergetico.perdidaTemperatura();
         Controladores.ControladorEnergetico.setupSecador(30, 7, 4);
     }
         

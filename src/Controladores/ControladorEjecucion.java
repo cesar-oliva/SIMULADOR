@@ -7,7 +7,7 @@ package Controladores;
 
 
 import Modelo.DataBase;
-import Vista.Ventana;
+import Vista.VentanaInicial;
 import javax.swing.table.DefaultTableModel;
 import Modelo.Proceso;
 import Vista.VentanaProceso;
@@ -21,49 +21,60 @@ import javax.swing.Timer;
  * @author Juampy
  */
 public class ControladorEjecucion {
-    static Ventana v = new Ventana();
-    static VentanaProceso vp = new VentanaProceso();
+    private static VentanaInicial vi = new VentanaInicial();
+    private static VentanaProceso vp = new VentanaProceso();
     static ActionListener al;
     static Timer t; 
     static int valor;
     static int i;
     static proceso p = proceso.ACTIVADO;
-    
     //// VARIABLES GLOBALES DEL CONTROLADOR
     private static double cant_carga;
     public static enum proceso{ACTIVADO,DESACTIVADO}
-
+    /// GETER AND SETTER     
     public static double getCant_carga() {
         return cant_carga;
     }
-
     public static void setCant_carga(double cant_carga) {
         ControladorEjecucion.cant_carga = cant_carga;
     }
-
     public static proceso getP() {
         return p;
     }
-
     public static void setP(proceso p) {
         ControladorEjecucion.p = p;
     }
+
+    public static VentanaInicial getVi() {
+        return vi;
+    }
+
+    public static void setVi(VentanaInicial vi) {
+        ControladorEjecucion.vi = vi;
+    }
+
+    public static VentanaProceso getVp() {
+        return vp;
+    }
+
+    public static void setVp(VentanaProceso vp) {
+        ControladorEjecucion.vp = vp;
+    }
     
-    
+    // INICIO DE SIMULADOR    
     public static void iniciar()
     {
-        v.setLocationRelativeTo(null);
-        v.setVisible(true);
+        vi.setLocationRelativeTo(null);
+        vi.setVisible(true);
+        vp.setVisible(true);
         //setTablas();
-        
-        ///PROBANDO FUNCIONES NUEVAS
-
-        iniciarSimulacion();
+ 
         
     }
         
     public static void iniciarSimulacion()
-    {  
+    {
+    vp.setVisible(true);
     int mes = 1;
     int dia = 1;
     int jornada = 1;
@@ -105,7 +116,9 @@ public class ControladorEjecucion {
         System.out.printf("Cantidad de Hojas verdes Procesadas: %.3f [kg]\n",Controladores.ControladorProceso.getAux_Proceso());
         System.out.printf("Cantidad de Hojas Secas obtenidas: %.3f [kg]\n",Controladores.ControladorProceso.getHoja_Seca());
         System.out.printf("Porcentaje de Humedad de Hojas Procesadas: %.3f\n",Controladores.ControladorProceso.getEstandar_Hoja());
-        //System.out.printf("Cantidad de Hojas Secas obtenidas: %.3f [kg]\n",Controladores.ControladorProceso.getAux_Secado());
+            System.out.println("CONT"+Controladores.ControladorEnergetico.getCont_Temp());
+            System.out.println("TOTAL TEMP" + Controladores.ControladorEnergetico.getAux_tempSecado());
+        System.out.printf("Temperatura Promedio de Secado: %.3f [ºC]\n",Controladores.ControladorEnergetico.getAux_tempSecado()/Controladores.ControladorEnergetico.getCont_Temp());
         Controladores.ControladorEjecucion.setP(proceso.DESACTIVADO);     
         dia++;
         }
